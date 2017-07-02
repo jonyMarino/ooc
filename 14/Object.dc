@@ -158,12 +158,12 @@ static void catch (int sig)		// signal handler: bad pointer
 //	initialization
 //    _Class and _Object are statically initialized structures
 
-static const struct Class _Object;
-static const struct Class _Class;
+extern const struct Class _Object;
+extern const struct Class _Class;
 
 %init
 
-static const struct Class _Object = {
+const struct Class _Object = {
 	{ MAGIC, & _Class },
 	"Object", & _Object, sizeof(struct Object),
 	{ "",		(Method) 0,		(Method) Object_ctor },
@@ -174,7 +174,7 @@ static const struct Class _Object = {
 	{ "",		(Method) 0,		(Method) Object_new },
 };
 
-static const struct Class _Class = {
+const struct Class _Class = {
 	{ MAGIC, & _Class },
 	"Class", & _Object, sizeof(struct Class),
 	{ "",		(Method) 0,		(Method) Class_ctor },

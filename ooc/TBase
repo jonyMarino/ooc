@@ -246,11 +246,8 @@ void super_cVoid (const void * _class, const void * _self) {
 static void * TBaseClass_ctor (void * _self, va_list * app) {
 	struct TBaseClass * self = super_ctor(TBaseClass(), _self, app);
 	Method selector;
-#ifdef va_copy
-	va_list ap; va_copy(ap, * app);
-#else
-	va_list ap = * app;
-#endif
+	va_list ap;
+	va_copy(ap,*app);
 
 	while ((selector = va_arg(ap, Method)))
 	{	const char * tag = va_arg(ap, const char *);
@@ -285,9 +282,6 @@ static void * TBaseClass_ctor (void * _self, va_list * app) {
 			continue;
 		}
 	}
-#ifdef va_copy
-	va_end(ap);
-#endif
 	return self;
 }
 

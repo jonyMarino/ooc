@@ -33,15 +33,8 @@
 			(char  *)  self  ->  super  +  offset, `n
 	`t	`t	sizeOf(self  ->  super)  -  offset); `n `n
 
-	#ifdef  va_copy `n
-	`t	va_copy(ap,  *  app); `n
-	#else `n
 	`t	ap  =  *  app; `n
-	#endif `n
 	`%meta-ctor-loop
-	#ifdef  va_copy `n
-	`t	va_end(ap); `n
-	#endif `n
 	`t	return  self; `n
     } `n `n
 

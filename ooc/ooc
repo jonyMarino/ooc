@@ -3,8 +3,8 @@
 #	use /bin/bash on linux
 #	cannot use sh on NeXT -- it forgets to remove the temporary file
 
-#   ooc -- 5.12 12/30/13 6:54:25
-#	Copyright (c) 1993, 2013 Axel T. Schreiner
+#	ooc -- 5.11 Sep 25 12:56:03 1993
+#	Copyright (c) 1993 Axel T. Schreiner
 
 usage()
 {
@@ -36,7 +36,7 @@ targets:     -dc        make thunks for last 'class'
 
 # the following need to be reviewed during installation (more below)
 
-	for awk in /usr/local/gnu/bin/gawk /usr/local/bin/gawk /usr/bin/gawk \
+	for awk in /usr/local/gnu/bin/gawk /usr/bin/gawk \
 	    /sw/bin/gawk ''; do
 	  [ -f $awk ] && break
 	done

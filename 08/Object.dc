@@ -124,8 +124,8 @@ static void catch (int sig)		// signal handler: bad pointer
 //	initialization
 //    _Class and _Object are statically initialized structures
 
-static const struct Class _Object;
-static const struct Class _Class;
+extern const struct Class _Object;
+extern const struct Class _Class;
 
 %init
 

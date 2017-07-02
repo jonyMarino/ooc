@@ -1,6 +1,5 @@
 #include "Filter.h"
 #include "String.h"
-#include <stdlib.h>
 
 % flag: Sort flags {
 %casts

@@ -12,16 +12,9 @@
 	`t	struct  `meta  *  self  =  super_ctor( `meta (),  _self,  app); `n
 	`t	typedef  void  (*  voidf)  (); `n
 	`t	voidf  selector; `n
-	#ifdef  va_copy `n
-	`t	va_list  ap;  va_copy(ap,  *  app); `n
-	#else `n
-	`t	va_list  ap  =  *  app; `n
-	#endif `n `n
+	`t	va_list  ap  =  *  app; `n `n
 
 		`%meta-ctor-loop
-	#ifdef  va_copy `n
-	`t	va_end(ap); `n
-	#endif `n
 	`t	return  self; `n
 	  } `n `n
 
